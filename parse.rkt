@@ -53,7 +53,7 @@
                      (("///") (parse-doc-comment comment-text))
                      (("//!") (parse-hot-comment comment-text))))))))
        (regexp-match*
-        #px"(?m:^(?:static )?struct err \\*([A-Za-z0-9_]+)\\(([^)]*)\\)|^(//[/!])\\s*(.*?)\\s*$)"
+        #px"(?m:^(?:static )?FFI struct err \\*([A-Za-z0-9_]+)\\(([^)]*)\\)|^(//[/!])\\s*(.*?)\\s*$)"
         input #:match-select values)))
 
 (define (append-if items new-item)
