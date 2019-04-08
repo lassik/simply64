@@ -23,7 +23,7 @@
   ;; word. Asterisks separated only by whitespace are put together in
   ;; the same group and the whitespace between them is removed.
   (map (lambda (token) (string-replace token #px"\\s+" ""))
-       (regexp-match* #px"(\\*[\\s\\*]*\\*|\\*|\\S+)" string-arg)))
+       (regexp-match* #px"\\*[\\s\\*]*\\*|\\*|\\S+" string-arg)))
 
 (define (parse-arg string-arg)
   (let-values (((argname argtype) (split-last (split-arg string-arg))))
